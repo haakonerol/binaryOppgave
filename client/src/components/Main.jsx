@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 function Main({ setDecoded }) {
   const [binary, setBinary] = useState(
@@ -6,7 +6,7 @@ function Main({ setDecoded }) {
   )
   const [error, setError] = useState('')
 
-  // 0 ve 1 dışındaki karakterleri engelle
+  
   const handleChange = (e) => {
     const value = e.target.value
     if (/^[01 \n]*$/.test(value)) {
@@ -17,7 +17,7 @@ function Main({ setDecoded }) {
     }
   }
 
-  // Decode işlemi ve backend'e kaydetme
+ 
   const handleDecode = async () => {
     if (!binary.trim()) {
       setError('Enter a binary')
@@ -27,16 +27,13 @@ function Main({ setDecoded }) {
     setError('')
 
     try {
-      // 1️⃣ Binary → String (frontend tarafında)
       const decodedStr = binary
         .split(' ')
         .map((b) => String.fromCharCode(parseInt(b, 2)))
         .join('')
 
-      // 2️⃣ decoded string'i parent component'e gönder
       setDecoded(decodedStr)
 
-      // 3️⃣ Backend'e kayıt isteği
       await fetch(`${import.meta.env.VITE_API_URL}/meldinger`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
