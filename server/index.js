@@ -26,6 +26,8 @@ app.all('/',(req, res)=> {
   res.send('Welcomm to Binary API')
 })
 
+app.use('/meldinger', require('./src/routes/meldingRouter'))
+
 /*--------------------------------------------------------------*/
 
 app.use(require('./src/middlewares/errorHandler'))
