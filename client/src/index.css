@@ -1,0 +1,114 @@
+/* Genel sayfa düzeni */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+}
+
+/* Uygulama konteyneri */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* Kart benzeri görünüm */
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Başlık */
+.card h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Label */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Input alanı */
+input[type='text'] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input[type='text']:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Hata mesajı */
+.error {
+  color: #d93025;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Decode butonu */
+button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #a8a8a8;
+  cursor: not-allowed;
+}
+
+/* Decode edilmiş sonucu gösteren kutu */
+.decoded-box {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #e8f5e9;
+  border: 1px solid #81c784;
+  border-radius: 8px;
+}
+
+.decoded-box h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.decoded-box p {
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.decoded-box .saved {
+  color: #2e7d32;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
